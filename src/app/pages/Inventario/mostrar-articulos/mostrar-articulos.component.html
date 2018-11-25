@@ -1,0 +1,35 @@
+<!-- <div class="container">
+    <div class="card-deck">
+        <div *ngFor="let arti of articulos" class="card text-white bg-dark ">
+            <img class="card-img-top" width="180" height="300" [src]="urlPublica + arti.imagen">
+            <div class="card-body">
+                <h4 class="card-title text-white"> {{ arti.descripcion }} </h4>
+                <p>Precio: {{arti.importe}}</p>
+                <p>Stock: {{arti.stock}}</p>
+                <a href="#" class="btn btn-primary">Editar articulo</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="card-columns">
+    <div *ngFor="let arti of articulos" class="card text-white bg-dark">
+        <img class="card-img-top" [src]="urlPublica + arti.imagen" height="150px" width="150px" alt="Card image cap">
+        <div class="card-body text-white">
+            <h5 class="card-title text-white">{{ arti.descripcion }}</h5>
+            <p class="card-text text-white">Precio: {{arti.importe}}</p>
+            <p class="card-text text-white">Stock: {{arti.stock}}</p>
+            <a href="#" class="btn btn-primary">Editar articulo</a>
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="card-deck">
+    <div *ngFor="let arti of articulos" class="card">
+        <img class="card-img-top" [src]="urlPublica + arti.imagen" height="200" width="200" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div> -->

@@ -1,0 +1,69 @@
+<div class="container">
+    <section>
+        <div class="card text-center text-black-50">
+            <div class="card-header  bg-dark mb-3 text-white">
+                <label><b>Nuevo Proveedor</b></label>
+            </div>
+            <div class="card-body">
+                <form #nuevoProveedor="ngForm" (ngSubmit)="OnSubmit()">
+                    <div class="form-group row justify-content-center">
+                        <label for="InputCodProveedor" class="col-sm-3 col-form-label font-weight-bold">Código de proveedor: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="cod_proveedor" [(ngModel)]="proveedor.codProveedor" id="InputCodProveedor" required>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputCuit" class="col-sm-3 col-form-label font-weight-bold">Cuit de proveedor: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="cuit" [(ngModel)]="proveedor.cuit" id="InputCuit" required>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputResponsable" class="col-sm-3 col-form-label font-weight-bold">Condición: </label>
+                        <div class="col-sm-5">
+                            <ng-select [items]="responsableOptions" name="responsable" id="InputResponsable" bindLabel="opcion" binValue="opcion" placeholder="" [(ngModel)]="selectedOpcionResponsable">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputDescripcion" class="col-sm-3 col-form-label font-weight-bold">Descripción: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="descripcion" [(ngModel)]="proveedor.descripcion" id="InputDescripcion" required>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputDomicilio" class="col-sm-3 col-form-label font-weight-bold">Domicilio: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="domicilio" [(ngModel)]="proveedor.domicilio" id="InputDomicilio">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InpuProvincia" class="col-sm-3 col-form-label font-weight-bold">Provincia: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="provincia" [(ngModel)]="proveedor.provincia" id="InpuProvincia">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputMail" class="col-sm-3 col-form-label font-weight-bold">Mail: </label>
+                        <div class="col-sm-5">
+                            <input type="mail" class="form-control" name="mail" [(ngModel)]="proveedor.mail" id="InputMail">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputTel1 " class="col-sm-3 col-form-label font-weight-bold ">Telefono 1: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text " class="form-control" name="tel1" [(ngModel)]="proveedor.tel1" id="InputTel1 ">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputTel2 " class="col-sm-3 col-form-label font-weight-bold ">Telefono 2: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text" class="form-control" name="tel2" [(ngModel)]="proveedor.tel2" id="InputTel2 ">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cargar Proveedor</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
