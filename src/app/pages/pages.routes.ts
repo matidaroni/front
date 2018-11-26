@@ -6,6 +6,7 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { CargaArticulosComponent } from './Inventario/carga-articulos/carga-articulos.component';
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { MostrarArticulosComponent } from './inventario/mostrar-articulos/mostrar-articulos.component';
+import { EditarArticuloComponent } from './inventario/editar-articulo/editar-articulo.component';
 
 
 
@@ -20,6 +21,7 @@ const pagesRoutes: Routes = [
            { path: 'carga-articulos', component: CargaArticulosComponent, data: { titulo: 'Carga de Articulos' } },
            { path: 'mostrar-articulos', component: MostrarArticulosComponent, data: { titulo: 'Articulos Cargados' } },
            { path: 'nuevo-proveedor', component: NuevoProveedorComponent, data: { titulo: 'Nuevo proveedor' } },
+           { path: 'editar-articulo/:codArticulo/:cod_proveedor', component: EditarArticuloComponent, data: { titulo: 'Editar articulo' } },
            { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         ]
    }

@@ -19,7 +19,7 @@
             <h5 class="card-title text-white">{{ arti.descripcion }}</h5>
             <p class="card-text text-white">Precio: {{arti.importe}}</p>
             <p class="card-text text-white">Stock: {{arti.stock}}</p>
-            <a href="#" class="btn btn-primary">Editar articulo</a>
+            <a [routerLink]="['/pages/editar-articulo/', arti.codArticulo, arti.cod_proveedor]" class="btn btn-primary">Editar articulo</a>
         </div>
     </div>
 </div>

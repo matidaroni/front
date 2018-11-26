@@ -32,7 +32,7 @@ import { EditarArticuloComponent } from './inventario/editar-articulo/editar-art
         CargaArticulosComponent,
         NuevoProveedorComponent,
         MostrarArticulosComponent,
-        EditarArticuloComponent,
+        EditarArticuloComponent
     ],
     exports: [
         PagesComponent,

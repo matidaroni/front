@@ -1,3 +1,79 @@
-<p>
-  editar-articulo works!
-</p>
+<div *ngIf="status" class="container">
+    <section>
+        <div class="card text-white bg-dark">
+            <h5 class="card-header text-white">{{ articulo.descripcion }}</h5>
+            <br>
+            <div class="row ">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-11 ">
+                    <img [src]="urlPublica + articulo.imagen" id="imgArti" height="200px" width="35%">
+                </div>
+
+            </div>
+
+            <div class="card-body">
+                <hr>
+                <form #editarArticulo="ngForm" (ngSubmit)="OnSubmit()">
+                    <div class="form-group row justify-content-center">
+                        <label for="InputCodArticulo " class="col-sm-3 col-form-label font-weight-bold">Código de articulo: </label>
+                        <div class="col-sm-5 col-sm-offset-3">
+                            <input type="text" class="form-control" name="codArticulo" [(ngModel)]="articulo.codArticulo" id="InputCodArticulo">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputCodProveedor" class="col-sm-3 col-form-label font-weight-bold ">Código de proveedor: </label>
+                        <div class="col-sm-5 ">
+                            <ng-select style="text-align:center;" [items]="proveedores" name="codProveedor" id="InputCodProveedor" bindLabel="codProveedor" binValue="codProveedor" placeholder="Seleccione un código de proveedor" [(ngModel)]="selectedOpcionCodProv">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputDescripcion " class="col-sm-3 col-form-label font-weight-bold">Descripción: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="descripcion" [(ngModel)]="articulo.descripcion" id="InputDescripcion">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputImporte " class="col-sm-3 col-form-label font-weight-bold ">Importe: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text " class="form-control " name="importe " [(ngModel)]="articulo.importe" id="InputImporte">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputCosto " class="col-sm-3 col-form-label font-weight-bold ">Costo: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text " class="form-control " name="costo " [(ngModel)]="articulo.costo " id="InputCosto ">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputFlete " class="col-sm-3 col-form-label font-weight-bold ">Flete: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text" class="form-control" name="flete" [(ngModel)]="articulo.flete" id="InputFlete">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputStock " class="col-sm-3 col-form-label font-weight-bold ">Stock Inicial: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text " class="form-control " name="stock " [(ngModel)]="articulo.stock " id="InputStock ">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputImagen" class="col-sm-3 col-form-label font-weight-bold">Subir imagen: </label>
+                        <div class="col-sm-5 ">
+                            <input type="file" name="imagen" id="InputImagen" (change)="cargandoImagen($event.target.files)">
+                        </div>
+                    </div>
+                    <div *ngIf=" imagen ">
+                        <img [src]="preImg ">
+                    </div>
+                    <br>
+                    <div align="center ">
+                        <button type="submit " class="btn btn-primary ">Cargar Articulo</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

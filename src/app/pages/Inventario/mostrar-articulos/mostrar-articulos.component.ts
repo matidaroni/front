@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArticulosService } from '../../../services/articulos/articulos.service';
 import { UsuarioService } from '../../../services/usuario/usuario.service';
 
+
 // Modelos
 import { Articulo } from 'src/app/models/articulo';
 
@@ -25,7 +26,9 @@ export class MostrarArticulosComponent implements OnInit {
 
   // articulos obtenidos
   articulos: Articulo;
-  constructor( private _articulosService: ArticulosService, private _usuarioService: UsuarioService) {
+  constructor( private _articulosService: ArticulosService, private _usuarioService: UsuarioService,
+               ) {
+
       this.urlPublica = APIURL.urlPublic;
       this.token = _usuarioService.getToken();
 

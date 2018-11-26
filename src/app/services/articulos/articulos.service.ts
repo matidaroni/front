@@ -51,4 +51,26 @@ export class ArticulosService {
 
     return this._http.post(this.url + 'guardarArticulos', params , {headers: headers});
   }
+
+  getArticulo(token, codArticulo): Observable<any> {
+
+    let json = JSON.stringify(codArticulo);
+    let params = 'json=' + json;
+
+    let headers = new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+    .set('Authorization', token);
+
+    return this._http.post(this.url + 'getArticulo' , params , {headers: headers});
+  }
+
+  updateArticulo(token, codArticulo: number, articulo: Articulo): Observable<any> {
+    let json = JSON.stringify(articulo);
+
+    let headers = new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+    .set('Authorization', token);
+
+    return this._http.post(this.url + 'updateArticulo' , {params: json, cod: codArticulo} , {headers: headers});
+  }
+
 }
+

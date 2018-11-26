@@ -140,37 +140,23 @@ export class CargaArticulosComponent implements OnInit {
         // Cargo imagen en el servidor
         this._cargaImagenService.subirImagen(this.imgFile).subscribe(
                   Response => {
-                    console.log(Response);
+                    // console.log(Response);
                     if ( Response.status === 'success') {
 
                       // Obtengo directorio donde se guardo la imagen en la api y se lo cargo al objeto imagen para almacenarlo en la bd
                       this.articulo.imagen = Response.directorio;
+                      this.cargaArti();
                     } else {
                       swal('Error', Response.message, 'error');
                     }
-                    // console.log(this.articulo);
-                    this.articulo.cod_proveedor = this.selectedOpcionCodProv.codProveedor;
-                    this._articulosService.crearArticulo(this.token, this.articulo).subscribe(
-                          Response => {
-                            this.status = Response.status;
-                            if (this.status === 'success') {
-                                console.log(Response);
-                                swal('Articulo cargado', 'El articulo fue cargado de forma exitosa', 'success');
-                            }
-                        },
-                          error => {
-                            swal('Error', error.statusText, 'error');
-                          });
-
-
                   },
                   error => {
                     swal('Error', 'Error al cargar la imagen: ' + error.statusText , 'error');
                   });
-
-      } else {
-        this.articulo.imagen = null;
-      }
+                } else {
+                  this.articulo.imagen = null;
+                  this.cargaArti();
+                }
 
     } else {
          swal('Código de proveedor no seleccionado', 'Por favor seleccione un código de proveedor', 'warning');
@@ -208,6 +194,23 @@ export class CargaArticulosComponent implements OnInit {
         },
         error => {
           swal('Error', error.message, 'error');
+        });
+    }
+
+    cargaArti() {
+
+      this.articulo.cod_proveedor = this.selectedOpcionCodProv.codProveedor;
+
+      this._articulosService.crearArticulo(this.token, this.articulo).subscribe(
+        Response => {
+          this.status = Response.status;
+          if (this.status === 'success') {
+              console.log(Response);
+              swal('Articulo cargado', 'El articulo fue cargado de forma exitosa', 'success');
+          }
+      },
+        error => {
+          swal('Error', error.statusText, 'error');
         });
     }
 
