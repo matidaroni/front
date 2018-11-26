@@ -21,6 +21,7 @@ import { CargaArticulosComponent } from './Inventario/carga-articulos/carga-arti
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { MostrarArticulosComponent } from './inventario/mostrar-articulos/mostrar-articulos.component';
 import { EditarArticuloComponent } from './inventario/editar-articulo/editar-articulo.component';
+import { NoimagePipe } from '../pipes/noimage.pipe';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { EditarArticuloComponent } from './inventario/editar-articulo/editar-art
         CargaArticulosComponent,
         NuevoProveedorComponent,
         MostrarArticulosComponent,
-        EditarArticuloComponent
+        EditarArticuloComponent,
+        NoimagePipe
     ],
     exports: [
         PagesComponent,
