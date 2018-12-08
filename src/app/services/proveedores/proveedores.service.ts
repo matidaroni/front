@@ -46,4 +46,33 @@ obtenerCodProv( token): Observable<any> {
 
 }
 
+getProviders(token: string): Observable<any> {
+
+  let headers = new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+                                  .set('Access-Control-Allow-Origin', '*')
+                                  .set('Authorization', token);
+
+  return this._http.get(this.url + 'getProviders' , {headers: headers});
+}
+
+getProvider(token: string, codProveedor): Observable<any> {
+  let json = JSON.stringify(codProveedor);
+  let params = 'json=' + json;
+
+  let headers = new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+  .set('Authorization', token);
+
+  return this._http.post(this.url + 'getProvider' , params , {headers: headers});
+}
+
+updateProvider(token, codProveedor: number, proveedor: Proveedor): Observable<any> {
+  let json = JSON.stringify(proveedor);
+
+  let headers = new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+  .set('Authorization', token);
+
+  return this._http.post(this.url + 'updateProvider' , {params: json, cod: codProveedor} , {headers: headers});
+}
+
+
 }

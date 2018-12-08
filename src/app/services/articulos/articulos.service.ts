@@ -36,6 +36,7 @@ export class ArticulosService {
   obtenerArticulos( token): Observable<any> {
 
     let headers = new HttpHeaders().set('Content-type', 'application/x-www-form-urlencoded')
+                                    .set('Access-Control-Allow-Origin', '*')
                                     .set('Authorization', token);
 
     return this._http.get(this.url + 'obtenerArticulos' , {headers: headers});

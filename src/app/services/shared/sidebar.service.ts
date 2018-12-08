@@ -29,7 +29,16 @@ export class SidebarService {
       titulo: 'Proveedores',
       icono: 'mdi mdi-gauge',
       submenu: [
-        { titulo: 'Nuevo Proveedor', url: '/pages/nuevo-proveedor' }
+        { titulo: 'Nuevo Proveedor', url: '/pages/nuevo-proveedor' },
+        { titulo: 'Proveedores', url: '/pages/mostrar-providers' }
+      ]
+    },
+    {
+      titulo: 'Clientes',
+      icono: 'mdi mdi-gauge',
+      submenu: [
+        { titulo: 'Nuevo Cliente', url: '/pages/cargar-cliente' },
+        { titulo: 'Clientes', url: '/pages/mostrar-clientes' },
       ]
     }
   ];

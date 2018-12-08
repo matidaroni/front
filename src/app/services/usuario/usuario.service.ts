@@ -30,7 +30,8 @@ export class UsuarioService {
     let json = JSON.stringify(usuario);
     let params = 'json=' + json;
 
-    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                   .set('Access-Control-Allow-Origin', '*');
 
     return this._http.post(this.apiUrl + 'login', params , {headers: headers});
   }

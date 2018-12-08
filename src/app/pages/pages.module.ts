@@ -19,9 +19,15 @@ import { PAGES_ROUTES } from './pages.routes';
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { CargaArticulosComponent } from './Inventario/carga-articulos/carga-articulos.component';
 import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-proveedor.component';
-import { MostrarArticulosComponent } from './inventario/mostrar-articulos/mostrar-articulos.component';
-import { EditarArticuloComponent } from './inventario/editar-articulo/editar-articulo.component';
+import { MostrarArticulosComponent } from './Inventario/mostrar-articulos/mostrar-articulos.component';
+import { EditarArticuloComponent } from './Inventario/editar-articulo/editar-articulo.component';
 import { NoimagePipe } from '../pipes/noimage.pipe';
+import { CargarClienteComponent } from './clientes/cargar-cliente/cargar-cliente.component';
+import { MostrarClientesComponent } from './clientes/mostrar-clientes/mostrar-clientes.component';
+import { ClientsTableComponent } from '../components/clients-table/clients-table.component';
+import { MostrarProveedoresComponent } from './proveedores/mostrar-proveedores/mostrar-proveedores.component';
+import { EditarClienteComponent } from './clientes/editar-cliente/editar-cliente.component';
+import { EditarProveedorComponent } from './proveedores/editar-proveedor/editar-proveedor.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +40,13 @@ import { NoimagePipe } from '../pipes/noimage.pipe';
         NuevoProveedorComponent,
         MostrarArticulosComponent,
         EditarArticuloComponent,
-        NoimagePipe
+        NoimagePipe,
+        CargarClienteComponent,
+        MostrarClientesComponent,
+        ClientsTableComponent,
+        MostrarProveedoresComponent,
+        EditarClienteComponent,
+        EditarProveedorComponent
     ],
     exports: [
         PagesComponent,

@@ -1,0 +1,25 @@
+<table class="table  table-hover  table-responsive">
+    <thead>
+        <tr>
+            <!-- <th *ngFor="let key of keys()" scope="col">{{ key }}</th> -->
+            <th *ngFor="let key of opciones()">{{key}}</th>
+            <!-- <th>Nombre</th>
+            <th>Cuit</th>
+            <th>Domicilio</th>
+            <th>Telefono 1</th>
+            <th>Telefono 2</th>
+            <th>Codigo Vendedor</th>
+            <th>Mail</th>
+            <th>Categoria</th>
+            <th>Factura</th>
+            <th>Cuenta Corriente</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items; let i=index" [routerLink]=" (opcion === 'clients') ? ['/pages/editar-cliente', item.codCliente] : ['/pages/editar-provider', item.codProveedor]">
+
+            <td *ngFor="let key of keys()">{{ item[key] }}</td>
+
+        </tr>
+    </tbody>
+</table>
