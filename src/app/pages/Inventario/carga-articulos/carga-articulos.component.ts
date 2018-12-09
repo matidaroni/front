@@ -12,6 +12,7 @@ import { ArticulosService } from 'src/app/services/services.index';
 import { UsuarioService } from '../../../services/usuario/usuario.service';
 import { ProveedoresService } from '../../../services/proveedores/proveedores.service';
 import { CargaImagenService } from '../../../services/cargaImagen/carga-imagen.service';
+import { Global } from '../../GlobalPages';
 
 @Component({
   selector: 'app-carga-articulos',
@@ -206,6 +207,7 @@ export class CargaArticulosComponent implements OnInit {
           this.status = Response.status;
           if (this.status === 'success') {
               console.log(Response);
+              Global.flagArticles = true;
               swal('Articulo cargado', 'El articulo fue cargado de forma exitosa', 'success');
           }
       },

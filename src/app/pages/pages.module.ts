@@ -28,6 +28,10 @@ import { ClientsTableComponent } from '../components/clients-table/clients-table
 import { MostrarProveedoresComponent } from './proveedores/mostrar-proveedores/mostrar-proveedores.component';
 import { EditarClienteComponent } from './clientes/editar-cliente/editar-cliente.component';
 import { EditarProveedorComponent } from './proveedores/editar-proveedor/editar-proveedor.component';
+// tslint:disable-next-line:quotemark
+import { DataTableModule } from "angular-6-datatable";
+
+
 
 @NgModule({
     declarations: [
@@ -59,7 +63,8 @@ import { EditarProveedorComponent } from './proveedores/editar-proveedor/editar-
         PAGES_ROUTES,
         FormsModule,
         CommonModule,
-        NgSelectModule
+        NgSelectModule,
+        DataTableModule
     ]
 })
 

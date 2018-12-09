@@ -64,9 +64,9 @@
                             <input type="file" name="imagen" id="InputImagen" (change)="cargandoImagen($event.target.files)">
                         </div>
                     </div>
-                    <div *ngIf=" imagen ">
-                        <img [src]="preImg ">
-                    </div>
+                    <!-- <div *ngIf="imagenCargada">
+                        <img [src]="preImg">
+                    </div> -->
                     <br>
                     <div align="center ">
                         <button type="submit " class="btn btn-primary ">Cargar Articulo</button>

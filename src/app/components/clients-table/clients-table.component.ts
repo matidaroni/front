@@ -9,10 +9,10 @@ export class ClientsTableComponent implements OnInit {
   @Input() items: any[] = [];
   @Input() opcion: string;
   KeysClients: string[] = [
-    'Codigo', 'Nombre', 'Cuit', 'Domicilio', 'Telefono 1', 'Telefono 2', 'Vendedor',
-                             'Mail', 'Categoria', 'Factura', 'Cuenta Corriente'];
+    'Codigo', 'Nombre', 'Cuit', 'Domicilio', 'Tel 1', 'Tel 2', 'Vendedor',
+                             'Mail', 'Categoria', 'Factura', 'Cuenta Cte'];
   KeysProviders: string[] = ['Codigo', 'Cuit', 'Responsable', 'Descripcion', 'Domicilio', 'Provincia', 'Mail',
-                             'Telefono 1', 'Telefono 2'];
+                             'Tel 1', 'Tel 2'];
   constructor() { }
 
   // Este metodo devuelve las keys de los datos que obtengo del archivo excel

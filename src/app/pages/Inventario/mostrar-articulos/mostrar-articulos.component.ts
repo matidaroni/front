@@ -10,6 +10,7 @@ import { Articulo } from 'src/app/models/articulo';
 
 // Otros
 import { APIURL } from '../../../services/apiUrl';
+import { Global } from '../../GlobalPages';
 
 @Component({
   selector: 'app-mostrar-articulos',
@@ -25,20 +26,26 @@ export class MostrarArticulosComponent implements OnInit {
   identidad: any;
 
   // articulos obtenidos
-  articulos: Articulo;
+   articulos: Articulo;
   constructor( private _articulosService: ArticulosService, private _usuarioService: UsuarioService,
                ) {
 
       this.urlPublica = APIURL.urlPublic;
       this.token = _usuarioService.getToken();
-
+  if (Global.flagArticles === true) {
       this._articulosService.obtenerArticulos(this.token).subscribe(
         Response => {
            this.articulos = Response.articulos;
+           Global.articulos = Response.articulos;
+           Global.flagArticles = false;
         },
         error => {
           console.log(error);
         });
+      } else {
+        this.articulos = Global.articulos;
+      }
+      console.log(this.articulos);
   }
 
   ngOnInit() {
