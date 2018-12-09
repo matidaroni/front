@@ -35,6 +35,7 @@ const pagesRoutes: Routes = [
            { path: 'cargar-cliente', component: CargarClienteComponent, data: { titulo: 'Nuevo cliente' } },
            { path: 'mostrar-clientes', component: MostrarClientesComponent, data: { titulo: 'Clientes' } },
            { path: 'editar-cliente/:codCliente', component: EditarClienteComponent, data: { titulo: 'Editar cliente' } },
+           // LOGOUT
            { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         ]
    }
