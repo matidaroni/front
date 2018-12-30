@@ -31,6 +31,8 @@ export class CargaArticulosComponent implements OnInit {
   arrayBuffer: any;
   file: File;
   aux: any;
+  // precio final del form
+  finalPrice: number = 0;
 
   // Select dinamico
   selectedOpcionCodProv: any = null;
@@ -214,6 +216,16 @@ export class CargaArticulosComponent implements OnInit {
         error => {
           swal('Error', error.statusText, 'error');
         });
+    }
+
+    getFinalPrice(ganancia, costo): number {
+        if (this.articulo.costo != null) {
+          let x1 = parseFloat(ganancia);
+          let x2 = parseFloat(costo);
+          return ((x1 * x2) / 100) + x2;
+        } else {
+          return 0;
+        }
     }
 
   }

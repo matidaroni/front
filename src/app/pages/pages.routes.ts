@@ -12,6 +12,8 @@ import { MostrarClientesComponent } from './clientes/mostrar-clientes/mostrar-cl
 import { MostrarProveedoresComponent } from './proveedores/mostrar-proveedores/mostrar-proveedores.component';
 import { EditarClienteComponent } from './clientes/editar-cliente/editar-cliente.component';
 import { EditarProveedorComponent } from './proveedores/editar-proveedor/editar-proveedor.component';
+import { CargarVentaComponent } from './ventas/cargar-venta/cargar-venta.component';
+import { MostrarVentasComponent } from './ventas/mostrar-ventas/mostrar-ventas.component';
 
 
 
@@ -35,6 +37,9 @@ const pagesRoutes: Routes = [
            { path: 'cargar-cliente', component: CargarClienteComponent, data: { titulo: 'Nuevo cliente' } },
            { path: 'mostrar-clientes', component: MostrarClientesComponent, data: { titulo: 'Clientes' } },
            { path: 'editar-cliente/:codCliente', component: EditarClienteComponent, data: { titulo: 'Editar cliente' } },
+           // VENTAS
+           { path: 'cargar-venta', component: CargarVentaComponent, data: { titulo: 'Cargar venta' } },
+           { path: 'mostrar-ventas', component: MostrarVentasComponent, data: { titulo: 'Ventas realizadas' } },
            // LOGOUT
            { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         ]

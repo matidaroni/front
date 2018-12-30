@@ -7,7 +7,6 @@ import { Cliente } from '../../../models/clientes';
 import { UsuarioService } from '../../../services/usuario/usuario.service';
 import { ClientesService } from '../../../services/clientes/clientes.service';
 import { Usuario } from '../../../models/usuario';
-import { log } from 'util';
 
 
 @Component({
@@ -26,7 +25,6 @@ export class MostrarClientesComponent implements OnInit {
   constructor( private _usuariosService: UsuarioService, private _clientesService: ClientesService) {
       this.token = _usuariosService.getToken();
       this.identidad = _usuariosService.getIdentidad();
-
       this._clientesService.getClients(this.token).subscribe(
         Response => {
             this.statusRespone = Response.status;

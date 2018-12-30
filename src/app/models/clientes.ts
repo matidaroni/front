@@ -10,11 +10,12 @@ export class Cliente {
     public categoria: number;
     public cod_vendedor: number;
     public factura: string;
-    public cuentaCte: string;
+    public cuentaCte: number;
+    public boniRecar: number;
 
     constructor(codCliente: number, nombre: string, domicilio: string, cuit: number,
         tel1: string, tel2: string, mail: string, categoria: number, cod_vendedor: number,
-        factura: string, cuentaCte: string) {
+        factura: string, cuentaCte: number, boniRecar: number) {
 
         this.codCliente = codCliente;
         this.nombre = nombre;
@@ -27,5 +28,6 @@ export class Cliente {
         this.cod_vendedor = cod_vendedor;
         this.factura = factura;
         this.cuentaCte = cuentaCte;
+        this.boniRecar = boniRecar;
     }
 }

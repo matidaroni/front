@@ -155,4 +155,14 @@ export class EditarArticuloComponent implements OnInit {
           });
   }
 
+  getFinalPrice(ganancia, costo): number {
+    if (this.articulo.costo != null) {
+      let x1 = parseFloat(ganancia);
+      let x2 = parseFloat(costo);
+      return ((x1 * x2) / 100) + x2;
+    } else {
+      return 0;
+    }
+}
+
 }

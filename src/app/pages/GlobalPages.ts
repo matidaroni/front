@@ -12,6 +12,7 @@ export const Global = {
          incremento: null,
          stock: null,
          imagen: null,
+         ganancia: null,
 }
 
 };

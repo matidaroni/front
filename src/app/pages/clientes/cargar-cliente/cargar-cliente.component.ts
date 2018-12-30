@@ -37,7 +37,7 @@ export class CargarClienteComponent implements OnInit {
    statusSubmit: string;
 
   constructor( private _clientesServices: ClientesService , _usuarioServices: UsuarioService) {
-    this.cliente = new Cliente(null, null, null, null, null, null, null, null, null, null, null);
+    this.cliente = new Cliente(null, null, null, null, null, null, null, null, null, null, null, null);
     this.identidad = _usuarioServices.getIdentidad();
     this.token = _usuarioServices.getToken();
   }

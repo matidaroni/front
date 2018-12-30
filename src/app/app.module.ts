@@ -16,7 +16,6 @@ import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent

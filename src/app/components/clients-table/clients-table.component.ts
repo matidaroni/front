@@ -10,7 +10,7 @@ export class ClientsTableComponent implements OnInit {
   @Input() opcion: string;
   KeysClients: string[] = [
     'Codigo', 'Nombre', 'Cuit', 'Domicilio', 'Tel 1', 'Tel 2', 'Vendedor',
-                             'Mail', 'Categoria', 'Factura', 'Cuenta Cte'];
+                             'Mail', 'Categoria', 'Factura', 'Cuenta Cte', 'B/R'];
   KeysProviders: string[] = ['Codigo', 'Cuit', 'Responsable', 'Descripcion', 'Domicilio', 'Provincia', 'Mail',
                              'Tel 1', 'Tel 2'];
   constructor() { }

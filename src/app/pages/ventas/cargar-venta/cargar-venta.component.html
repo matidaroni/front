@@ -1,0 +1,111 @@
+<style>
+    .buttonSave {
+        position: fixed;
+    }
+</style>
+<br>
+
+<!-- SELECCIONAR CLIENTE -->
+<div>
+    <div class="card bg-dark mb-3 text-white">
+
+
+        <div class="card-body">
+            <div class="form-group row justify-content-center ">
+                <div class="col-md-12 ">
+                    <ng-select style="text-align:center;" [items]="clients" name="Client" id="InputClient" bindLabel="nombre" binValue="codCliente" placeholder="Seleccione un cliente" [(ngModel)]="selectedClient" required>
+                    </ng-select>
+                </div>
+                <div class="col-md-12 m-2">
+                    <!-- TABLA CON LOS DATOS DEL CLIENTE SELECCIONADO -->
+                    <table *ngIf="selectedClient != null" class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Cuit</th>
+                                <th scope="col">Domicilio</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Cuenta corriente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ selectedClient.nombre }}</td>
+                                <td>{{ selectedClient.cuit }}</td>
+                                <td>{{ selectedClient.domicilio }}</td>
+                                <td>{{ selectedClient.tel1 }}</td>
+                                <td>{{ selectedClient.cuentaCte | currency:'$' }}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <!-- FIN TABLA-->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div *ngIf="selectedClient != null" class="card bg-dark mb-3 text-white">
+        <div class="card-header bg-dark mb-3 text-white">
+            <div class="row">
+                <div class="col-md-6">
+                    <label> Articulo </label>
+                </div>
+                <div class="col-md-6 text-center">
+                    <label style="font-weight: bold" class="m-l-10">TOTAL : {{ total | currency:'$' }} </label>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body">
+            <div style="position: fixed; right: 30px; bottom: 30px; padding-bottom: 2em; z-index: auto">
+                <button class="btn  btn-primary" type="submit" (click)="cargarVenta()">Cargar Venta</button>
+            </div>
+            <div class="form-group row justify-content-center ">
+                <div class="col-md-8">
+                    <ng-select style="text-align:center;" [items]="articles" name="Articles" id="InputArticles" bindLabel="descripcion" binValue="codArticulo" (change)="focusCantidad()" placeholder="Seleccione un Articulo" [(ngModel)]="selectedArticulo" required>
+                    </ng-select>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputCantidad " class="col-sm-3 col-form-label font-weight-bold ">Cantidad: </label>
+                        <div class="col-sm-5 col-sm-offset-3 ">
+                            <input type="text" #inputCantidad class="form-control " name="cantidad " [(ngModel)]="cantArticle" id="InputCantidad" (focus)="selectedArticulo != null" (keyup.enter)="addArticle()">
+                        </div>
+                    </div>
+                </div>
+                <!-- TABLA CON LOS DATOS DEL ARTICULO SELECCIONADO -->
+                <table *ngIf="flag" class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col">Ganancia</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio/U</th>
+                            <th scope="col">subtotal</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let article of articlesSelected let i=index">
+                            <td>{{ article.descripcion }}</td>
+                            <td>{{ article.costo }}</td>
+                            <td>{{ article.ganancia }}</td>
+                            <td>{{ article.stock }}</td>
+                            <td>{{ article.cantidad }}</td>
+                            <td>{{ article.precioXuni | currency:'$'}}</td>
+                            <td>{{ article.total | currency:'$' }}</td>
+                            <td><button (click)="deleteOrderLine(i)" class="btn btn-danger"><i class="mdi mdi-delete mdi-18px"> </i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- FIN TABLA-->
+            </div>
+        </div>
+    </div>
+
+</div>

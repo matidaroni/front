@@ -4,13 +4,18 @@ import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { PagesComponent } from './pages.component';
 import {NgSelectModule} from '@ng-select/ng-select';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// tslint:disable-next-line:max-line-length
+import { MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule, MatAutocompleteModule, MatDialogModule, MatChipsModule, MatTableModule } from '@angular/material';
 
 
 // Modules
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { StickyModule } from 'ng2-sticky-kit';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 
 // Rutas
 import { PAGES_ROUTES } from './pages.routes';
@@ -30,6 +35,12 @@ import { EditarClienteComponent } from './clientes/editar-cliente/editar-cliente
 import { EditarProveedorComponent } from './proveedores/editar-proveedor/editar-proveedor.component';
 // tslint:disable-next-line:quotemark
 import { DataTableModule } from "angular-6-datatable";
+import { CargarVentaComponent } from './ventas/cargar-venta/cargar-venta.component';
+import { ObservablesComponent } from './observables/observables/observables.component';
+import { DialogVentaComponent } from './ventas/cargar-venta/dialog-venta/dialog-venta.component';
+import { DomseguroPipe } from '../pipes/domseguro.pipe';
+import { MostrarVentasComponent } from './ventas/mostrar-ventas/mostrar-ventas.component';
+
 
 
 
@@ -50,7 +61,12 @@ import { DataTableModule } from "angular-6-datatable";
         ClientsTableComponent,
         MostrarProveedoresComponent,
         EditarClienteComponent,
-        EditarProveedorComponent
+        EditarProveedorComponent,
+        CargarVentaComponent,
+        ObservablesComponent,
+        DialogVentaComponent,
+        DomseguroPipe,
+        MostrarVentasComponent,
     ],
     exports: [
         PagesComponent,
@@ -62,9 +78,24 @@ import { DataTableModule } from "angular-6-datatable";
         SharedModule,
         PAGES_ROUTES,
         FormsModule,
+        ReactiveFormsModule,
         CommonModule,
         NgSelectModule,
-        DataTableModule
+        DataTableModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatAutocompleteModule,
+        StickyModule,
+        MatDialogModule,
+        PdfViewerModule,
+        MatInputModule,
+        MatSelectModule,
+        MatChipsModule,
+        MatTableModule
+    ],
+    entryComponents: [
+        DialogVentaComponent
     ]
 })
 
