@@ -1,0 +1,81 @@
+<div class="container">
+    <section>
+        <div class="card text-center text-black-50">
+            <div class="card-header  bg-dark mb-3 text-white">
+                <label><b>{{ getTitle() }}</b></label>
+            </div>
+            <div class="card-body">
+                <form #nuevoProveedor="ngForm" (ngSubmit)="OnSubmit()">
+                    <div class="form-group row justify-content-center">
+                        <label for="InputCodCliente" class="col-sm-3 col-form-label font-weight-bold">Código de cliente: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="cod_cliente" [(ngModel)]="cliente.codCliente" id="InputCodCliente" required>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputNombre" class="col-sm-3 col-form-label font-weight-bold">Nombre: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="nombre" [(ngModel)]="cliente.nombre" id="InputNombre" required>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputDomicilio" class="col-sm-3 col-form-label font-weight-bold">Domicilio: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="domicilio" [(ngModel)]="cliente.domicilio" id="InputDomicilio" required>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputCuit" class="col-sm-3 col-form-label font-weight-bold">Cuit: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="cuit" [(ngModel)]="cliente.cuit" id="InputCuit">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InpuTel1" class="col-sm-3 col-form-label font-weight-bold">Tel1: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="tel1" [(ngModel)]="cliente.tel1" id="InpuTel1">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InpuTel2" class="col-sm-3 col-form-label font-weight-bold">Tel2: </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="tel2" [(ngModel)]="cliente.tel2" id="InpuTel2">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputMail" class="col-sm-3 col-form-label font-weight-bold">Mail: </label>
+                        <div class="col-sm-5">
+                            <input type="mail" class="form-control" name="mail" [(ngModel)]="cliente.mail" id="InputMail">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputCategoria " class="col-sm-3 col-form-label font-weight-bold ">Categoria: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text " class="form-control" name="categoria" [(ngModel)]="cliente.categoria" id="InputCategoria ">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="InputFactura" class="col-sm-3 col-form-label font-weight-bold">Tipo de factura: </label>
+                        <div class="col-sm-5">
+                            <ng-select [items]="facturaOptions" name="factura" id="InputFactura" bindLabel="opcion" binValue="opcion" placeholder="" [(ngModel)]="selectedOpcionFactura">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputCte " class="col-sm-3 col-form-label font-weight-bold ">Cuenta Cte: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text" class="form-control" name="cuentaCte" [(ngModel)]="cliente.cuentaCte" id="InputCte ">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center ">
+                        <label for="InputBoniRecar " class="col-sm-3 col-form-label font-weight-bold ">Bonificación/Recargo: </label>
+                        <div class="col-sm-5 ">
+                            <input type="text" class="form-control" name="boniRecar" [(ngModel)]="cliente.boniRecar" id="InputBoniRecar ">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cargar Cliente</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

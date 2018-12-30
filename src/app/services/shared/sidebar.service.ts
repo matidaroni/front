@@ -17,7 +17,7 @@ export class SidebarService {
     //   },
       {
         titulo: 'Inventario',
-        icono: 'mdi mdi-gauge',
+        icono: 'mdi mdi-book-open-variant',
         submenu: [
           { titulo: 'Cargar Articulos', url: '/pages/carga-articulos' },
           { titulo: 'Articulos', url: '/pages/mostrar-articulos' }
@@ -27,9 +27,26 @@ export class SidebarService {
     },
     {
       titulo: 'Proveedores',
-      icono: 'mdi mdi-gauge',
+      icono: 'mdi mdi-truck',
       submenu: [
-        { titulo: 'Nuevo Proveedor', url: '/pages/nuevo-proveedor' }
+        { titulo: 'Nuevo Proveedor', url: '/pages/nuevo-proveedor' },
+        { titulo: 'Proveedores', url: '/pages/mostrar-providers' }
+      ]
+    },
+    {
+      titulo: 'Clientes',
+      icono: 'mdi mdi-account-multiple',
+      submenu: [
+        { titulo: 'Nuevo Cliente', url: '/pages/cargar-cliente' },
+        { titulo: 'Clientes', url: '/pages/mostrar-clientes' },
+      ]
+    },
+    {
+      titulo: 'Ventas',
+      icono: 'mdi mdi-cart',
+      submenu: [
+        { titulo: 'Cargar Venta', url: '/pages/cargar-venta' },
+        { titulo: 'Ventas', url: '/pages/mostrar-ventas' }
       ]
     }
   ];

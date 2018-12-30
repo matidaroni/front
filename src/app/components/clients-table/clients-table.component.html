@@ -1,0 +1,36 @@
+<div class="table-responsive">
+    <table class="table table-hover" [mfData]="items" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead class="thead-dark">
+            <tr>
+                <!-- <th *ngFor="let key of keys()" scope="col">{{ key }}</th> -->
+                <th style="font-weight: bold" scope="col" class="text-center" *ngFor="let key of opciones()">
+                    <mfDefaultSorter by="{{key}}">{{key}}</mfDefaultSorter>
+                </th>
+                <!-- <th>Nombre</th>
+            <th>Cuit</th>
+            <th>Domicilio</th>
+            <th>Telefono 1</th>
+            <th>Telefono 2</th>
+            <th>Codigo Vendedor</th>
+            <th>Mail</th>
+            <th>Categoria</th>
+            <th>Factura</th>
+            <th>Cuenta Corriente</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="font-size: 0.8em" *ngFor="let item of mf.data; let i=index" [routerLink]=" (opcion === 'clients') ? ['/pages/editar-cliente', item.codCliente] : ['/pages/editar-provider', item.codProveedor]">
+
+                <td class="text-center" *ngFor="let key of keys()">{{ item[key] }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <br>
+            <tr>
+                <td colspan="4">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

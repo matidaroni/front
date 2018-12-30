@@ -20,4 +20,12 @@ export class CargaImagenService {
 
     return this._httpClient.post(this.url + 'imagenArticulo', formData);
   }
+
+  subirPdf(pdf: File): Observable<any> {
+    const formData = new FormData();
+
+    formData.append('pdf', pdf);
+
+    return this._httpClient.post(this.url + 'pdf', formData);
+  }
 }

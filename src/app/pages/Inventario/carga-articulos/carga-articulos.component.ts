@@ -12,6 +12,7 @@ import { ArticulosService } from 'src/app/services/services.index';
 import { UsuarioService } from '../../../services/usuario/usuario.service';
 import { ProveedoresService } from '../../../services/proveedores/proveedores.service';
 import { CargaImagenService } from '../../../services/cargaImagen/carga-imagen.service';
+import { Global } from '../../GlobalPages';
 
 @Component({
   selector: 'app-carga-articulos',
@@ -30,6 +31,8 @@ export class CargaArticulosComponent implements OnInit {
   arrayBuffer: any;
   file: File;
   aux: any;
+  // precio final del form
+  finalPrice: number = 0;
 
   // Select dinamico
   selectedOpcionCodProv: any = null;
@@ -206,12 +209,23 @@ export class CargaArticulosComponent implements OnInit {
           this.status = Response.status;
           if (this.status === 'success') {
               console.log(Response);
+              Global.flagArticles = true;
               swal('Articulo cargado', 'El articulo fue cargado de forma exitosa', 'success');
           }
       },
         error => {
           swal('Error', error.statusText, 'error');
         });
+    }
+
+    getFinalPrice(ganancia, costo): number {
+        if (this.articulo.costo != null) {
+          let x1 = parseFloat(ganancia);
+          let x2 = parseFloat(costo);
+          return ((x1 * x2) / 100) + x2;
+        } else {
+          return 0;
+        }
     }
 
   }

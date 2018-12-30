@@ -2,7 +2,7 @@
     <section>
         <div class="card text-center text-black-50">
             <div class="card-header  bg-dark mb-3 text-white">
-                <label><b>Nuevo Proveedor</b></label>
+                <label><b>{{ getTitle() }}</b></label>
             </div>
             <div class="card-body">
                 <form #nuevoProveedor="ngForm" (ngSubmit)="OnSubmit()">

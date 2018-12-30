@@ -1,0 +1,68 @@
+<style>
+    .pdfdiv {
+        height: 0%;
+        overflow: hidden;
+    }
+    
+    .example-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .example-container>* {
+        width: 100%;
+    }
+</style>
+<!-- <div class="container example container">
+    <div class="row">
+        <div class="col-md-12 m-b-40" style="text-align: center">
+
+            <div class="form-group row justify-content-center ">
+                <div class="col-md-12">
+                    <ng-select style="text-align:center;" (change)="change()" [items]="opcionesPago" name="pago" id="InputClient" bindLabel="opcion" binValue="opcion" placeholder="Seleccione una forma de pago" [(ngModel)]="selectedOpcion" required>
+                    </ng-select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+            <button (click)="cargarVenta()" class="btn btn-primary">Cargar venta</button>
+            <br>
+        </div>
+        <mat-form-field>
+            <textarea matInput placeholder="Textarea" style="width: 100%"></textarea>
+        </mat-form-field>
+    </div>
+</div>
+<object [data]="pdf | domseguro" type="application/pdf" class="" width="100% " height="100% ">
+</object> -->
+<mat-card>
+    <mat-card-title>
+        Cargar Venta
+    </mat-card-title>
+    <div class="example-container">
+        <mat-form-field>
+            <mat-select placeholder="Seleccione una Forma de Pago" [(ngModel)]="selectedOpcion" [formControl]="formaPagoControl" [errorStateMatcher]="matcher">
+                <mat-option *ngFor="let op of opcionesPago" [value]="op.opcion">
+                    {{op.opcion}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formaPagoControl.hasError('required')">
+                Debe seleccionar una forma de pago
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <textarea matInput placeholder="Observación de la venta" [(ngModel)]="data.order.observacion"></textarea>
+        </mat-form-field>
+    </div>
+    <mat-card-actions style="text-align: center">
+        <button [disabled]="formaPagoControl.hasError('required') || btnDisable == true " (click)="cargarVenta()" class="btn btn-primary">Cargar venta</button>
+        <button (click)="salir()" class="btn btn-primary m-l-10">Salir</button>
+    </mat-card-actions>
+</mat-card>
+<br>
+<object [data]="pdf | domseguro" type="application/pdf" class="" width="100% " height="100% ">
+</object>

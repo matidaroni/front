@@ -14,7 +14,7 @@
 
 <div class="card-columns">
     <div *ngFor="let arti of articulos" class="card text-white bg-dark">
-        <img class="card-img-top" [src]="urlPublica + arti.imagen" height="150px" width="150px" alt="Card image cap">
+        <img class="card-img-top" [src]="arti.imagen | noimage" height="150px" width="150px">
         <div class="card-body text-white">
             <h5 class="card-title text-white">{{ arti.descripcion }}</h5>
             <p class="card-text text-white">Precio: {{arti.importe}}</p>
